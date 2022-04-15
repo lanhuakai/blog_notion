@@ -2,18 +2,19 @@ import BLOG from '@/blog.config'
 import Head from 'next/head'
 
 const CommonHead = ({ meta, children }) => {
-  let url = BLOG?.SUB_PATH?.length ? `${BLOG.LINK}/${BLOG.SUB_PATH}` : BLOG.LINK
+  let url = BLOG?.PATH?.length ? `${BLOG.LINK}/${BLOG.SUB_PATH}` : BLOG.LINK
   let image
   if (meta) {
     url = `${url}/${meta.slug}`
-    image = meta.image ? meta.image : ''
+    image = meta.image || ''
   }
   const title = meta?.title || BLOG.TITLE
   const description = meta?.description || BLOG.DESCRIPTION
   const type = meta?.type || 'website'
   const keywords = meta?.tags || BLOG.KEYWORDS
-  const lang = BLOG.LANG.replace('-', '_')
-  const section = meta?.articleSection || '軟體科技'
+  const lang = BLOG.LANG.replace('-', '_') // Facebook OpenGraph 要 zh_CN 這樣的格式才抓得到語言
+  const category = meta?.category || BLOG.KEYWORDS || '軟體科技' // section 主要是像是 category 這樣的分類，Facebook 用這個來抓連結的分類
+
   return (
     <Head>
       <title>{title}</title>
@@ -36,9 +37,9 @@ const CommonHead = ({ meta, children }) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:type" content={type} />
       <meta property="og:image" content={image} />
       <meta property="og:site_name" content={BLOG.TITLE} />
+      <meta property="og:type" content={type} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:title" content={title} />
@@ -52,7 +53,7 @@ const CommonHead = ({ meta, children }) => {
             content={meta.date || meta.createdTime}
           />
           <meta property="article:author" content={BLOG.AUTHOR} />
-          <meta property="article:section" content={section} />
+          <meta property="article:section" content={category} />
           <meta property="article:publisher" content={BLOG.FACEBOOK_PAGE} />
         </>
       )}

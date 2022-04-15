@@ -42,9 +42,9 @@ const Slug = props => {
   const meta = {
     title: `${post.title} | ${siteInfo.title}`,
     description: post.summary,
-    slug: post.slug,
-    image: post.page_cover,
     type: 'article',
+    image: post.page_cover,
+    slug: post.slug,
     tags: post.tags
   }
 

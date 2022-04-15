@@ -22,7 +22,7 @@ const Search = props => {
 
   const { locale } = useGlobal()
   const meta = {
-    title: `${searchKey ? searchKey + ' | ' : ''}${locale.NAV.SEARCH} | ${
+    title: `${searchKey || ''}${searchKey ? ' | ' : ''}${locale.NAV.SEARCH} | ${
       siteInfo.title
     }`,
     description: siteInfo.description,

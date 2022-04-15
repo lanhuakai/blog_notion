@@ -7,9 +7,11 @@ const Index = props => {
   const { keyword, siteInfo } = props
   const { locale } = useGlobal()
   const meta = {
-    title: `${keyword || ''} | ${locale.NAV.SEARCH} | ${siteInfo.title}`,
+    title: `${keyword || ''}${keyword ? ' | ' : ''}${locale.NAV.SEARCH} | ${
+      siteInfo.title
+    }`,
     description: siteInfo.title,
-    slug: 'search/' + keyword,
+    slug: 'search/' + (keyword || ''),
     type: 'website'
   }
   const { theme } = useGlobal()
