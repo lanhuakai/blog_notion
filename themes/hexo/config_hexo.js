@@ -1,5 +1,5 @@
 const CONFIG_HEXO = {
-  HOME_BANNER_ENABLE: true,
+  HOME_BANNER_ENABLE: false,
   HOME_BANNER_GREETINGS: ['Hi，认识你很开心 (*^▽^*)',  '兰花清幽', '陶醉其间🎉'], // 首页大图标语文字
 
   // 菜单配置
