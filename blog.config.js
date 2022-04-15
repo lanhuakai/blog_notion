@@ -1,6 +1,6 @@
 // 注: process.env.XX是Vercel的环境变量，配置方式见：https://docs.tangly1024.com/zh/features/personality
 const BLOG = {
-  TITLE: "Andy's Pro Blog", // 站点标题 ，被notion中的页面标题覆盖
+  TITLE: "", // 站点标题 ，被notion中的页面标题覆盖
   DESCRIPTION:
     '站点描述', // 站点描述，被notion中的页面描述覆盖
   AUTHOR: '兰花醉', // 作者
