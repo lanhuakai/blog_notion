@@ -2,17 +2,17 @@
 const BLOG = {
   TITLE: "Andy's Pro Blog", // 站点标题 ，被notion中的页面标题覆盖
   DESCRIPTION:
-    '歡迎來到 Andys.pro! 在這裡與 YouTube, 我分享 Apple iPhone, MacBook 產品心得, Javascript 開發,以及軟式網球的技巧!', // 站点描述，被notion中的页面描述覆盖
-  AUTHOR: 'Andy', // 作者
-  BIO: '喜歡 Apple 產品, Javascript 與軟式網球的工程師', // 作者简介
-  LINK: 'https://tw.andys.pro', // 网站地址
+    '站点描述', // 站点描述，被notion中的页面描述覆盖
+  AUTHOR: '兰花醉', // 作者
+  BIO: '', // 作者简介
+  LINK: 'https://blog.lanhuazui.top', // 网站地址
   FACEBOOK_PAGE: process.env.NEXT_PUBLIC_FACEBOOK_PAGE || '',
   FACEBOOK_PAGE_ID: process.env.NEXT_PUBLIC_FACEBOOK_PAGE_ID || '', //Facebook Page ID 來啟用 messenger 聊天功能
   FACEBOOK_APP_ID: process.env.NEXT_PUBLIC_FACEBOOK_APP_ID || '', //Facebook App ID 來啟用 messenger 聊天功能
   PROFILE_LINK: process.env.NEXT_PUBLIC_PROFILE_LINK || '/', // 預設 '/' 快速回到首頁，也可以設定 '/about' 到關於我的頁面
   AVATAR: process.env.AVATAR || '/avatar.png', // 个人头像 默认取public目录下的avatar.png
   KEYWORDS:
-    'YouTube, Notion, 部落格, Apple, 蘋果, iPhone, iPad, MacBook, Apple Watch, AirPods, Javascript, React, React Native, Soft Tennis, 軟式網球', // 网站关键词 英文逗号隔开
+    'notion', // 网站关键词 英文逗号隔开
   NOTION_PAGE_ID:
     process.env.NOTION_PAGE_ID || '02ab3b8678004aa69e9e415905ef32a5', // Important page_id！！！Duplicate Template from  https://www.notion.so/tanghh/02ab3b8678004aa69e9e415905ef32a5
   NOTION_ACCESS_TOKEN: process.env.NOTION_ACCESS_TOKEN || '', // Useful if you prefer not to make your database public
@@ -23,7 +23,7 @@ const BLOG = {
   HOME_BANNER_IMAGE: process.env.HOME_BANNER_IMAGE || './bg_image.jpg', // 首页背景大图，默认文件：/public/bg_image.jpg 。会被Notion中的封面图覆盖。
   SINCE: 2020, // e.g if leave this empty, current year will be used.
   BEI_AN: process.env.NEXT_PUBLIC_BEI_AN || '', // 备案号 闽ICP备XXXXXXX
-  APPEARANCE: process.env.APPEARANCE || 'auto', // ['light', 'dark', 'auto'], // light 日间模式 ， dark夜间模式， auto根据时间和主题自动夜间模式
+  APPEARANCE: process.env.APPEARANCE || 'light', // ['light', 'dark', 'auto'], // light 日间模式 ， dark夜间模式， auto根据时间和主题自动夜间模式
   FONT: process.env.FONT || 'font-sans tracking-wider subpixel-antialiased', // 文章字体 ['font-sans', 'font-serif', 'font-mono'] @see https://www.tailwindcss.cn/docs/font-family
   FONT_AWESOME_PATH:
     process.env.FONT_AWESOME_PATH ||
@@ -42,11 +42,11 @@ const BLOG = {
   PREVIEW_TAG_COUNT: process.env.PREVIEW_TAG_COUNT || 16, // 首页最多展示的标签数量，0为不限制
 
   // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
-  CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'mail@tangly1024.com',
+  CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'lanhuazui@gmail.com',
   CONTACT_WEIBO: process.env.NEXT_PUBLIC_CONTACT_WEIBO || '',
   CONTACT_TWITTER: process.env.NEXT_PUBLIC_CONTACT_TWITTER || '',
   CONTACT_GITHUB:
-    process.env.NEXT_PUBLIC_CONTACT_GITHUB || 'https://github.com/tangly1024',
+    process.env.NEXT_PUBLIC_CONTACT_GITHUB || 'https://github.com/lanhuakai',
   CONTACT_TELEGRAM: process.env.NEXT_PUBLIC_CONTACT_TELEGRAM || '',
   CONTACT_YOUTUBE: process.env.NEXT_PUBLIC_CONTACT_YOUTUBE || '',
 
@@ -55,7 +55,7 @@ const BLOG = {
   WIDGET_PET_LINK:
     process.env.WIDGET_PET_LINK ||
     'https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json', // 挂件模型地址 @see https://github.com/xiazeyu/live2d-widget-models
-  WIDGET_PET_SWITCH_THEME: process.env.WIDGET_PET_SWITCH_THEME || true, // 点击宠物挂件切换博客主题
+  WIDGET_PET_SWITCH_THEME: process.env.WIDGET_PET_SWITCH_THEME || false, // 点击宠物挂件切换博客主题
 
   // 评论互动 可同时开启多个支持 GISCUS CUSDIS UTTERRANCES GITALK
 
